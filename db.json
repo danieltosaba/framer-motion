@@ -1,0 +1,51 @@
+{
+  "blankets": [
+    {
+      "id": 1,
+      "name": "Couples initials personalized blanket",
+      "description": "Elegant personalized throw blanket is a perfect wedding or anniversary gift. These throw blankets are a great addition to your bedroom, as a sofa blanket or can be hanged on the wall. Our custom blankets w/fringe are crafted from 100% cotton yarn. Artwork is not printed but woven into the throw combining six colored yarns, therefore the fringe of the throw will be colored on two sides. Design is one sided.",
+      "price": 99,
+      "size": {
+        "small": "37x52",
+        "regular": "50x60",
+        "large": "60x80"
+      },
+      "imageUrl": [
+        {
+          "url": "https://i.etsystatic.com/24457747/r/il/f77581/2448341230/il_1140xN.2448341230_g5e0.jpg"
+        },
+        {
+          "url": "https://i.etsystatic.com/24457747/r/il/6c78f8/2448358474/il_1140xN.2448358474_h701.jpg"
+        },
+        {
+          "url": "https://i.etsystatic.com/24457747/r/il/b6025d/2495897065/il_794xN.2495897065_pmaa.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Evil Eye Throw Blanket - Bohemian Artisan Throw",
+      "description": "Contemporary bohemian throw blanket is a great addition to your bedroom, as a sofa blanket or can be hanged on the wall. Our throw blankets w/fringe are crafted from 100% cotton yarn. Artwork is not printed but woven into the throw combining six colored yarns, therefore the fringe of the throw will be colored on two sides. Design is one sided.",
+      "price": {
+        "regular": 79,
+        "large": 99
+      },
+      "size": {
+        "small": "37x52",
+        "regular": "50x60",
+        "large": "60x80"
+      },
+      "imageUrl": [
+        {
+          "url": "https://i.etsystatic.com/24457747/r/il/b4178f/2553141580/il_794xN.2553141580_jvzt.jpg"
+        },
+        {
+          "url": "https://i.etsystatic.com/24457747/r/il/93b68b/2600768895/il_794xN.2600768895_noqg.jpg"
+        },
+        {
+          "url": "https://i.etsystatic.com/24457747/r/il/455d87/2600768563/il_794xN.2600768563_d6at.jpg"
+        }
+      ]
+    }
+  ]
+}
