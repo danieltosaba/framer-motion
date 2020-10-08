@@ -4,6 +4,8 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import React from 'react';
 import theme from '../helpers/ui/theme';
+// import "../node_modules/react-image-gallery/styles/css/image-gallery.css";
+
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
