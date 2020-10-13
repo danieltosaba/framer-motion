@@ -13,7 +13,7 @@
         "large": "60x80"
       },
       "imageUrl": {
-        "url":["https://i.etsystatic.com/24457747/r/il/f77581/2448341230/il_1140xN.2448341230_g5e0.jpg", "https://i.etsystatic.com/24457747/r/il/6c78f8/2448358474/il_1140xN.2448358474_h701.jpg", "https://i.etsystatic.com/24457747/r/il/b6025d/2495897065/il_794xN.2495897065_pmaa.jpg"],
+        "url":["/images/il_1140xN.2448341230_g5e0.jpg", "https://i.etsystatic.com/24457747/r/il/6c78f8/2448358474/il_1140xN.2448358474_h701.jpg", "https://i.etsystatic.com/24457747/r/il/b6025d/2495897065/il_794xN.2495897065_pmaa.jpg"],
         "cover": "https://i.etsystatic.com/24457747/r/il/f77581/2448341230/il_1140xN.2448341230_g5e0.jpg"
       }
     },

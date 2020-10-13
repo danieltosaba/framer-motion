@@ -1,23 +1,30 @@
-import { Container, Grid } from "@material-ui/core";
+import { Card, Container, Grid, Paper, Typography } from "@material-ui/core";
+import CardContent from "@material-ui/core/CardContent";
+import axios from "axios";
+import { motion } from "framer-motion";
 import fetch from "isomorphic-unfetch";
 import { GetStaticPaths, GetStaticProps } from "next";
 import ImageGallery from "react-image-gallery";
+import useSWR from "swr";
 import { Blanket } from "../../models/blanket";
 import "../../node_modules/react-image-gallery/styles/css/image-gallery.css";
 
+// type ProductDetailsProps = Blanket;
+interface ProductDetailsProps extends Blanket {
+  blanketID: string;
+}
 
-type ProductDetailsProps = Blanket;
-
-export default function ProductDetails({
-  name,
-  imageUrl,
-  description,
-  price,
-  size,
-}: ProductDetailsProps) {
+export default function ProductDetails({ blanket, blanketID }) {
+  const {
+    data,
+  } = useSWR(
+    `https://my-json-server.typicode.com/danieltosaba/framer-motion/blankets/${blanketID}`,
+    (url: string) => axios(url).then((r) => r.data),
+    { initialData: blanket }
+  );
 
   let images = [];
-  imageUrl.url.forEach((img) => {
+  data.imageUrl.url.forEach((img) => {
     images.push({
       original: img,
       thumbnail: img,
@@ -25,15 +32,36 @@ export default function ProductDetails({
   });
 
   return (
-    <Container>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <ImageGallery items={images} />
-          <pre>{JSON.stringify(imageUrl, null, 4)}</pre>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <Container>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <ImageGallery items={images} />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Paper elevation={0}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h4" gutterBottom>
+                    {data.name}
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    Price: {data.price.small}
+                  </Typography>
+                  <Typography variant="body1" gutterBottom>
+                    {data.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={6}></Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </motion.div>
   );
 }
 
@@ -43,9 +71,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `https://my-json-server.typicode.com/danieltosaba/framer-motion/blankets/${id}`
   );
   const blanket = await response.json();
-  console.log(blanket);
+
   return {
-    props: blanket,
+    props: { blanket, blanketID: id },
   };
 };
 
