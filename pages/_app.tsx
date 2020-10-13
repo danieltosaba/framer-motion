@@ -1,12 +1,10 @@
 import { Box, Container } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-import axios from "axios";
 import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import PropTypes from "prop-types";
 import React from "react";
-import { SWRConfig } from "swr";
 import Nav from "../components/Nav";
 import theme from "../helpers/ui/theme";
 
@@ -34,7 +32,6 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Nav />
-        <SWRConfig value={{fetcher: (url: string) => axios(url).then(r => r.data)}}>
         <AnimatePresence exitBeforeEnter>
           <Container>
             <Box marginTop={2}>
@@ -42,7 +39,6 @@ export default function MyApp(props) {
           </Box>
           </Container>
         </AnimatePresence>
-        </SWRConfig>
       </ThemeProvider>
     </React.Fragment>
   );

@@ -13,8 +13,8 @@
         "large": "60x80"
       },
       "imageUrl": {
-        "url":["/images/il_1140xN.2448341230_g5e0.jpg", "https://i.etsystatic.com/24457747/r/il/6c78f8/2448358474/il_1140xN.2448358474_h701.jpg", "https://i.etsystatic.com/24457747/r/il/b6025d/2495897065/il_794xN.2495897065_pmaa.jpg"],
-        "cover": "https://i.etsystatic.com/24457747/r/il/f77581/2448341230/il_1140xN.2448341230_g5e0.jpg"
+        "url":["/images/il_1140xN.2448341230_g5e0.jpg", "/images/il_1140xN.2448358474_h701.jpg", "/images/il_794xN.2495897065_pmaa.jpg"],
+        "cover": "/images/il_1140xN.2448341230_g5e0.jpg"
       }
     },
     {
@@ -31,8 +31,8 @@
         "large": "60x80"
       },
       "imageUrl": {
-        "url": ["https://i.etsystatic.com/24457747/r/il/b4178f/2553141580/il_794xN.2553141580_jvzt.jpg", "https://i.etsystatic.com/24457747/r/il/93b68b/2600768895/il_794xN.2600768895_noqg.jpg", "https://i.etsystatic.com/24457747/r/il/455d87/2600768563/il_794xN.2600768563_d6at.jpg"],
-        "cover":"https://i.etsystatic.com/24457747/r/il/b4178f/2553141580/il_794xN.2553141580_jvzt.jpg"
+        "url": ["/images/il_794xN.2553141580_jvzt.jpg", "/images/il_794xN.2600768895_noqg.jpg", "/images/il_794xN.2600768563_d6at.jpg"],
+        "cover":"/images/il_794xN.2553141580_jvzt.jpg"
       }
     }
   ]

@@ -1,12 +1,10 @@
 import { Card, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import axios from "axios";
 import { motion } from "framer-motion";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import useSWR from "swr";
 import { Blanket } from "../models/blanket";
 
 export interface HomeProps {
@@ -21,7 +19,6 @@ const useStyles = makeStyles({
 
 export default function Home({ blankets }: HomeProps) {
   const classes = useStyles();
-  const {data} = useSWR('https://my-json-server.typicode.com/danieltosaba/framer-motion/blankets/', (url: string) => axios(url).then(r => r.data), {initialData: blankets})
   return (
     <motion.div exit={{ opacity: 0 }} initial={{opacity: 0}} animate={{opacity: 1}}>
       <div>
@@ -33,7 +30,7 @@ export default function Home({ blankets }: HomeProps) {
               <Grid item xs={12}>
                 <h1>CHOOSE YOUR BLANKET</h1>
               </Grid>
-              {data.map((blanket) => (
+              {blankets.map((blanket) => (
                 <Grid key={blanket.id} item xs={12} sm={6} lg={4}>
                   <Card>
                     <Link href="/product/[id]" as={`/product/${blanket.id}`}>
@@ -57,7 +54,7 @@ export default function Home({ blankets }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const response = await fetch(
-    "https://my-json-server.typicode.com/danieltosaba/framer-motion/blankets/"
+    "http://localhost:4001/blankets/"
   );
   const blankets = await response.json();
   return {
